@@ -20,15 +20,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"www.astar.tk","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"mac"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="2023年4月25日 表间数据的拷贝与更改 1. 使用 student 表中所有姓张学生的信息，创建一个新表 s. 拆分需求： 1. 找到 student 中所有姓张的学生. 2. 创建一个新表。 找到姓张的学生：SELECT * FROM student WHERE Sname LIKE &#39;张%&#39; 使用查询语句创建表：CREATE TABLE s AS 数据 1CREATE T">
+    <meta name="description" content="2023年4月25日 表间数据的拷贝与更改 1. 使用 student 表中所有姓张学生的信息，创建一个新表 s. 拆分需求： 1. 找到 student 中所有姓张的学生. 2. 创建一个新表。 找到姓张的学生：SELECT * FROM student WHERE Sname LIKE &#39;张%&#39; 使用查询语句创建表：CREATE TABLE s AS 数据 1CREATE">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【作业笔记】MySQL">
 <meta property="og:url" content="https://www.astar.tk/2023/04/25/%E3%80%90%E4%BD%9C%E4%B8%9A%E7%AC%94%E8%AE%B0%E3%80%91MySQL/index.html">
 <meta property="og:site_name" content="Aa的小站~">
-<meta property="og:description" content="2023年4月25日 表间数据的拷贝与更改 1. 使用 student 表中所有姓张学生的信息，创建一个新表 s. 拆分需求： 1. 找到 student 中所有姓张的学生. 2. 创建一个新表。 找到姓张的学生：SELECT * FROM student WHERE Sname LIKE &#39;张%&#39; 使用查询语句创建表：CREATE TABLE s AS 数据 1CREATE T">
+<meta property="og:description" content="2023年4月25日 表间数据的拷贝与更改 1. 使用 student 表中所有姓张学生的信息，创建一个新表 s. 拆分需求： 1. 找到 student 中所有姓张的学生. 2. 创建一个新表。 找到姓张的学生：SELECT * FROM student WHERE Sname LIKE &#39;张%&#39; 使用查询语句创建表：CREATE TABLE s AS 数据 1CREATE">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-04-25T06:24:26.000Z">
-<meta property="article:modified_time" content="2023-04-25T07:26:49.402Z">
+<meta property="article:modified_time" content="2023-04-25T08:33:59.096Z">
 <meta property="article:author" content="Aa">
 <meta property="article:tag" content="作业">
 <meta property="article:tag" content="SQL">
@@ -206,7 +206,7 @@ result 表中把所有 12010111 班的学生的成绩都加 2 分。</span></a><
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-04-25 14:24:26 / 修改时间：15:26:49" itemprop="dateCreated datePublished" datetime="2023-04-25T14:24:26+08:00">2023-04-25</time>
+      <time title="创建时间：2023-04-25 14:24:26 / 修改时间：16:33:59" itemprop="dateCreated datePublished" datetime="2023-04-25T14:24:26+08:00">2023-04-25</time>
     </span>
 
   
@@ -225,7 +225,8 @@ result 表中把所有 12010111 班的学生的成绩都加 2 分。</span></a><
 <code>student</code> 表中所有姓张学生的信息，创建一个新表
 <code>s</code>.</h3>
 <p>拆分需求：<br />
-1. 找到 <code>student</code> 中所有姓张的学生. 2. 创建一个新表。</p>
+1. 找到 <code>student</code> 中所有姓张的学生.<br />
+2. 创建一个新表。</p>
 <p>找到姓张的学生：<code>SELECT * FROM student WHERE Sname LIKE '张%'</code><br />
 使用查询语句创建表：<code>CREATE TABLE s AS 数据</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> s <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;张%&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -233,7 +234,9 @@ result 表中把所有 12010111 班的学生的成绩都加 2 分。</span></a><
 id="找到-student-中所有出生在-1995-年的学生把这些学生的信息插入表-s-中.">2.
 找到 <code>student</code> 中所有出生在 1995
 年的学生，把这些学生的信息插入表 <code>s</code> 中.</h3>
-<p>拆分需求： 1. 找到 1995 年出生的学生。 2. 插入表 <code>s</code></p>
+<p>拆分需求：<br />
+1. 找到 1995 年出生的学生。<br />
+2. 插入表 <code>s</code></p>
 <p><code>INSERT INTO 表名(字段名) VALUES(值)</code>
 在使用查询语句时可改写为：<code>INSERT INTO 表名(字段名) SELECT 字段名...</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> s <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(Sbirthday) <span class="operator">=</span> <span class="number">1995</span></span><br></pre></td></tr></table></figure>
@@ -241,15 +244,17 @@ id="找到-student-中所有出生在-1995-年的学生把这些学生的信息�
 id="找到-student-表中-11010111-班的学生的学号姓名班级编号把这些信息插入表-s-.">3.
 找到 <code>student</code> 表中 11010111
 班的学生的学号、姓名、班级编号，把这些信息插入表 <code>s</code> .</h3>
-<p>拆分需求： 1. 找到 <code>Classno</code> = 11010111 的所有
-<code>Sno</code>, <code>Sname</code>, <code>Classno</code> 2. 插入
-<code>s</code></p>
+<p>拆分需求：<br />
+1. 找到 <code>Classno</code> = 11010111 的所有 <code>Sno</code>,
+<code>Sname</code>, <code>Classno</code><br />
+2. 插入 <code>s</code></p>
 <p>注意字段对应。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> s(Sno, Sname, Classno) <span class="keyword">SELECT</span> Sno, Sname, Classno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Classno <span class="operator">=</span> <span class="number">11010111</span></span><br></pre></td></tr></table></figure>
 <h3 id="在-result-表中把所有-12010111-班的学生的成绩都加-2-分">4. 在
 <code>result</code> 表中把所有 12010111 班的学生的成绩都加 2 分。</h3>
-<p>拆分需求： 1. 找到 12010111 班的所有学生。 2. 把他们的
-<code>score</code> 字段值加上 2.</p>
+<p>拆分需求：<br />
+1. 找到 12010111 班的所有学生。<br />
+2. 把他们的 <code>score</code> 字段值加上 2.</p>
 <p>因为 <code>result</code> 表中只有 <code>sno</code> 没有
 <code>Classno</code> ，无法直接判断是不是 12010111
 班学生，所以先用子查询找到所有 12010111 班所有学生的学号，再判断

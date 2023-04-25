@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://www.astar.tk/about/index.html</loc>
+    <loc>https://www.astar.tk/2023/04/25/%E3%80%90%E4%BD%9C%E4%B8%9A%E7%AC%94%E8%AE%B0%E3%80%91MySQL/</loc>
     
     <lastmod>2023-04-25</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.astar.tk/2023/04/25/%E3%80%90%E4%BD%9C%E4%B8%9A%E7%AC%94%E8%AE%B0%E3%80%91MySQL/</loc>
+    <loc>https://www.astar.tk/about/index.html</loc>
     
     <lastmod>2023-04-25</lastmod>
     
@@ -38,13 +38,6 @@
 
   
   <url>
-    <loc>https://www.astar.tk/tags/%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2023-04-25</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://www.astar.tk/tags/%E4%BD%9C%E4%B8%9A/</loc>
     <lastmod>2023-04-25</lastmod>
     <changefreq>weekly</changefreq>
@@ -53,6 +46,13 @@
   
   <url>
     <loc>https://www.astar.tk/tags/SQL/</loc>
+    <lastmod>2023-04-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.astar.tk/tags/%E6%95%B0%E5%AD%A6/</loc>
     <lastmod>2023-04-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
