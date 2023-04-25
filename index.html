@@ -305,7 +305,7 @@ mjx-container[display="true"] + br {
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-04-25 14:24:26 / 修改时间：16:33:59" itemprop="dateCreated datePublished" datetime="2023-04-25T14:24:26+08:00">2023-04-25</time>
+      <time title="创建时间：2023-04-25 14:24:26 / 修改时间：16:52:05" itemprop="dateCreated datePublished" datetime="2023-04-25T14:24:26+08:00">2023-04-25</time>
     </span>
 
   
@@ -319,41 +319,58 @@ mjx-container[display="true"] + br {
     
     <div class="post-body" itemprop="articleBody">
           <h1 id="年4月25日">2023年4月25日</h1>
+<hr />
 <h2 id="表间数据的拷贝与更改">表间数据的拷贝与更改</h2>
+<p><br></p>
 <h3 id="使用-student-表中所有姓张学生的信息创建一个新表-s.">1. 使用
 <code>student</code> 表中所有姓张学生的信息，创建一个新表
 <code>s</code>.</h3>
-<p>拆分需求：<br />
-1. 找到 <code>student</code> 中所有姓张的学生.<br />
-2. 创建一个新表。</p>
+<p>拆分需求：</p>
+<ul>
+<li>找到 <code>student</code> 中所有姓张的学生.<br />
+</li>
+<li>创建一个新表。</li>
+</ul>
 <p>找到姓张的学生：<code>SELECT * FROM student WHERE Sname LIKE '张%'</code><br />
 使用查询语句创建表：<code>CREATE TABLE s AS 数据</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> s <span class="keyword">AS</span> (<span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Sname <span class="keyword">LIKE</span> <span class="string">&#x27;张%&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><br></p>
 <h3
 id="找到-student-中所有出生在-1995-年的学生把这些学生的信息插入表-s-中.">2.
 找到 <code>student</code> 中所有出生在 1995
 年的学生，把这些学生的信息插入表 <code>s</code> 中.</h3>
-<p>拆分需求：<br />
-1. 找到 1995 年出生的学生。<br />
-2. 插入表 <code>s</code></p>
+<p>拆分需求：</p>
+<ul>
+<li>找到 1995 年出生的学生。<br />
+</li>
+<li>插入表 <code>s</code></li>
+</ul>
 <p><code>INSERT INTO 表名(字段名) VALUES(值)</code>
 在使用查询语句时可改写为：<code>INSERT INTO 表名(字段名) SELECT 字段名...</code></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> s <span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> <span class="keyword">YEAR</span>(Sbirthday) <span class="operator">=</span> <span class="number">1995</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
 <h3
 id="找到-student-表中-11010111-班的学生的学号姓名班级编号把这些信息插入表-s-.">3.
 找到 <code>student</code> 表中 11010111
 班的学生的学号、姓名、班级编号，把这些信息插入表 <code>s</code> .</h3>
-<p>拆分需求：<br />
-1. 找到 <code>Classno</code> = 11010111 的所有 <code>Sno</code>,
+<p>拆分需求：</p>
+<ul>
+<li>找到 <code>Classno</code> = 11010111 的所有 <code>Sno</code>,
 <code>Sname</code>, <code>Classno</code><br />
-2. 插入 <code>s</code></p>
+</li>
+<li>插入 <code>s</code></li>
+</ul>
 <p>注意字段对应。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> s(Sno, Sname, Classno) <span class="keyword">SELECT</span> Sno, Sname, Classno <span class="keyword">FROM</span> student <span class="keyword">WHERE</span> Classno <span class="operator">=</span> <span class="number">11010111</span></span><br></pre></td></tr></table></figure>
+<p><br></p>
 <h3 id="在-result-表中把所有-12010111-班的学生的成绩都加-2-分">4. 在
 <code>result</code> 表中把所有 12010111 班的学生的成绩都加 2 分。</h3>
-<p>拆分需求：<br />
-1. 找到 12010111 班的所有学生。<br />
-2. 把他们的 <code>score</code> 字段值加上 2.</p>
+<p>拆分需求：</p>
+<ul>
+<li>找到 12010111 班的所有学生。<br />
+</li>
+<li>把他们的 <code>score</code> 字段值加上 2.</li>
+</ul>
 <p>因为 <code>result</code> 表中只有 <code>sno</code> 没有
 <code>Classno</code> ，无法直接判断是不是 12010111
 班学生，所以先用子查询找到所有 12010111 班所有学生的学号，再判断
